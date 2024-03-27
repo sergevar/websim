@@ -1,5 +1,9 @@
 # WebSim
 
+![WebSim](https://pbs.twimg.com/media/GJozYunXUAA2r1h?format=jpg&name=4096x4096)
+
+Thread: https://twitter.com/realsergevar/status/1772786357850509743
+
 ## How to run
 
 As usual:

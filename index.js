@@ -40,7 +40,19 @@ app.get('*', async(req, res) => {
 
     try {
         const result = await claudeApi(system_prompt, user_prompt);
+
         res.send(result);
+
+        // save to ./outputs/<unixtime>.json
+        const fs = require('fs');
+        const unixtime = new Date().getTime();
+        const output = {
+            path: path,
+            system_prompt: system_prompt,
+            user_prompt: user_prompt,
+            result: result,
+        };
+        fs.writeFileSync(`./outputs/${unixtime}.json`, JSON.stringify(output, null, 2));
     } catch (error) {
         console.error('Error:', error);
         res.send('Sorry, there was an error: ' + error);

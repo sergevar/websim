@@ -38,8 +38,16 @@ app.get('*', async(req, res) => {
         'GET ' + path,
     ]).join('\n');    
 
+    options = {
+        temperature: 1,
+        max_tokens: 2000,
+        model: "claude-3-opus-20240229",
+        // model: "claude-3-sonnet-20240229",
+        // model: "claude-3-haiku-20240307",
+    }
+
     try {
-        const result = await claudeApi(system_prompt, user_prompt);
+        const result = await claudeApi(options, system_prompt, user_prompt);
 
         res.send(result);
 
@@ -47,10 +55,11 @@ app.get('*', async(req, res) => {
         const fs = require('fs');
         const unixtime = new Date().getTime();
         const output = {
-            path: path,
-            system_prompt: system_prompt,
-            user_prompt: user_prompt,
-            result: result,
+            path,
+            options,
+            system_prompt,
+            user_prompt,
+            result,
         };
         fs.writeFileSync(`./outputs/${unixtime}.json`, JSON.stringify(output, null, 2));
     } catch (error) {

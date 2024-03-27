@@ -7,13 +7,11 @@ const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-const claudeApi = async (system_prompt, user_prompt) => {
+const claudeApi = async (options, system_prompt, user_prompt) => {
     const msg = await anthropic.messages.create({
-        model: "claude-3-opus-20240229",
-        // model: "claude-3-sonnet-20240229",
-        // model: "claude-3-haiku-20240307",
-        max_tokens: 2000,
-        temperature: 1,
+        model: options.model || "claude-3-opus-20240229",
+        max_tokens: options.max_tokens || 2000,
+        temperature: options.temperature || 0,
         system: system_prompt,
         messages: [
           {

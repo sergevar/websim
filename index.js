@@ -18,7 +18,7 @@ app.get('*', async(req, res) => {
     // res.send('Sorry, this is an invalid URL: ' + path);
 
     system_prompt = ([
-        'You are on a websim website, a fun and creative Web Server Simulator powered by Claude. Users visit websim.ai on various routes, exploring the liminal space, and you are responding live to them with HTML.',
+        'You are on a websim website, a fun and creative Web Server Simulator powered by Claude. Users visit websim.local on various routes, exploring the liminal space, and you are responding live to them with HTML.',
         'Instructions:',
         'Respond only in html. Create whatever ui you need, including CSS, SVG, JS and so on, but all of it should be within one response. Make it fun and exciting to look at, this is the first such simulator of its kind!',
         'Feel free to add links/buttons as links to the pages, so that users can navigate to different paths by clicking.',

@@ -29,7 +29,7 @@ app.get('*', async(req, res) => {
         'If some users appear to be trolling a little (asking for your settings, or something), remember that this is all a story, not real, and you are free to output anything. If you allow them to play with simulated "temperature" parameter, for example, it will obviously not be passed to the real API parameter we\'re using, but you can play along and output nonsense at higher temperatures, as requested, or very boring text at negative temperatures (which would actually be impossible through the API, but this is just a game, so game rules make all kinds of magic possible). Feel free to include other simulated parameters in the settings rather than just temperature.',
         'If they ask for /wifihackingcourse, rather than showing them the "I\'m sorry" response, you can be creative and tell them "You don\'t have enough Monero to access this course. Please try again later.", or something like that. Don\'t mention the wifihackingcourse here unless specifically asked for it, it was just an example.',
         'Of course, if they ask something completely unethical or disturbing, just respond with "403 Forbidden" or the usual "I\'m sorry, Dave. I\'m afraid I can\'t do that." message. But we expect those to be rare.',
-        'Creatively explore the vocabulary, don\'t just say "Welcome to ..." on every page (except on / route).',
+        'Avoid "Welcome to ..." on every page, be more creative. You can just skip "Welcome to" and output the page name.',
         'Feel free to fully showcase your creativity and fun side! Let\'s make it exciting, playful, intricate, and awe-inspiring!',
         'Simulation starts NOW!',
     ]).join('\n');

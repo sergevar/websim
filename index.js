@@ -38,9 +38,13 @@ app.get('*', async(req, res) => {
         'GET ' + path,
     ]).join('\n');    
 
-    const result = await claudeApi(system_prompt, user_prompt);
-
-    res.send(result);
+    try {
+        const result = await claudeApi(system_prompt, user_prompt);
+        res.send(result);
+    } catch (error) {
+        console.error('Error:', error);
+        res.send('Sorry, there was an error: ' + error);
+    }
 });
 
 app.listen(port, () => {

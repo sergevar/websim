@@ -1,4 +1,6 @@
-= WebSim
+# WebSim
+
+## How to run
 
 As usual:
 

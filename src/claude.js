@@ -12,7 +12,7 @@ const claudeApi = async (system_prompt, user_prompt) => {
         model: "claude-3-opus-20240229",
         // model: "claude-3-sonnet-20240229",
         // model: "claude-3-haiku-20240307",
-        max_tokens: 1000,
+        max_tokens: 2000,
         temperature: 1,
         system: system_prompt,
         messages: [
